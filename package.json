@@ -1,0 +1,39 @@
+{
+  "name": "@yellowcab/app-telemetry",
+  "version": "1.0.0",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/mjs/index.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:cjs": "rm -rf dist/cjs && tsc -p tsconfig.cjs.json && sh ./scripts/mount-cjs-package-json.sh",
+    "build:mjs": "rm -rf dist/mjs && tsc -p tsconfig.mjs.json && sh ./scripts/mount-mjs-package-json.sh",
+    "build": "npm run build:cjs && npm run build:mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yell0wcab/ts-playground.git"
+  },
+  "homepage": "https://github.com/yell0wcab/ts-playground/tree/main/app-telemetry#readme",
+  "files": [ "dist/*" ],
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/exporter-metrics-otlp-http": "^0.54.2",
+    "@opentelemetry/exporter-prometheus": "^0.54.2",
+    "@opentelemetry/sdk-metrics": "^1.27.0",
+    "@sentry/node": "^8.37.1",
+    "@sentry/profiling-node": "^8.38.0",
+    "@sentry/types": "^8.38.0"
+  }
+}
