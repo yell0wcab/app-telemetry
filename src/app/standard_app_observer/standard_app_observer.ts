@@ -7,7 +7,8 @@ import { AbstractExceptionsObserver, ExceptionsObserver } from '../../exceptions
 import { ExceptionsToLogWriter } from '../../exceptions/writer/log_writer.js';
 import { ExceptionsToMetricsWriter } from '../../exceptions/writer/metrics_writer.js';
 import { ExceptionsToSentryWriter } from '../../exceptions/writer/sentry_writer.js';
-import { AbstractLoggerFactory, ConsoleLoggerFactory, LogLevel } from '../../logger/index.js';
+import { AbstractLoggerFactory, LogLevel } from '../../logger/logger.js';
+import { ConsoleLoggerFactory } from '../../logger/console_logger.js'
 import { initOpenTelemetry } from '../../sdk/open_telemetry/initialize_sdk.js';
 import { SentryConfig } from '../../sdk/sentry/config.js';
 import { OpenTelemetryConfig } from '../../sdk/open_telemetry/config.js';

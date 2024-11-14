@@ -1,5 +1,5 @@
 import { AbstractExceptionsObserver } from "../exceptions/exceptions_observer.js";
-import { AbstractLogger, AbstractLoggerFactory } from "../logger/index.js";
+import { AbstractLogger, AbstractLoggerFactory } from "../logger/logger.js";
 import { MetricsObserver } from "../metrics/metrics_observer.js";
 
 export type AppInfo = {
