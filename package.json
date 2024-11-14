@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Nodejs application telemetry framework",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
   "exports": {
@@ -20,9 +20,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yell0wcab/ts-playground.git"
+    "url": "git+https://github.com/yell0wcab/app-telemetry.git"
   },
-  "homepage": "https://github.com/yell0wcab/ts-playground/tree/main/app-telemetry#readme",
+  "homepage": "https://github.com/yell0wcab/app-telemetry",
   "files": [ "dist/*" ],
   "devDependencies": {
     "typescript": "^5.6.3"
