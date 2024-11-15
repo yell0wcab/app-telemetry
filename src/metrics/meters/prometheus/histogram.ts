@@ -129,7 +129,7 @@ export class PromCumulativeHistogram<AttributesTypes extends Attributes = Attrib
   protected labelDistribution: Map<string, { count: number; sum: number; buckets: HistogramBucket[] }> = new Map();
 
   constructor(name: string, protected options?: HistogramMetricOptions) {
-    name = name.replace(/\-/, '_');
+    name = name.replace(/-/g, '_');
     this.name = name.endsWith("_distribution") ? name : `${name}_distribution`;
     this.bucketDescriptors = PromCumulativeHistogram.sortAndValidateBucketDescriptors(options?.bucketDescriptors || DEFAULT_BUCKET_DESCRIPTORS);
   }

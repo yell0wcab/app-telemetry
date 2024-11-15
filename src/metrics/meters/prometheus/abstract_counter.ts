@@ -7,7 +7,7 @@ export abstract class PromAbstractCounter<AttributesTypes extends Attributes = A
   protected labelDistribution: Map<string, number> = new Map();
 
   protected constructor(name: string, protected options?: MetricOptions) {
-    name = name.replace(/\-/, '_');
+    name = name.replace(/-/g, '_');
     this.name = name.endsWith("_total") ? name : `${name}_total`;
   }
 

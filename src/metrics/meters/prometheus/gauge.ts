@@ -3,9 +3,12 @@ import { PrometheusInstrument } from "../prometheus_meter.js";
 import { attributesToLabel } from "./utils.js";
 
 export class PromGauge<AttributesTypes extends Attributes = Attributes> implements Gauge<AttributesTypes>, PrometheusInstrument {
+  protected name: string;
   protected labelDistribution: Map<string, number> = new Map();
 
-  public constructor(protected name: string, protected options?: MetricOptions) {}
+  public constructor(name: string, protected options?: MetricOptions) {
+    this.name = name.replace(/-/g, '_');
+  }
 
   /**
    * Records a measurement.
